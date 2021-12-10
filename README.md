@@ -1,1 +1,7 @@
-# machine_learning_ray_tracing
+# machine-learning-polarimetry
+
+List of Files to Include:
+
+- Item 1
+
+- Item 2
