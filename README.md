@@ -1,6 +1,8 @@
 # Machine Learning Polarimetry
-This repository contains codes that computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (mcclain ray tracing).
+
 ## Overview
+## Polarimetry
+This repository contains codes that computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (mcclain ray tracing).
 ### Input
 #### Geometric Parameters
 - angle between the incident ray and the incident plane, the incident angle (a_i)
@@ -19,5 +21,6 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 - Mueller matrix of the material. (M)
 - the diference of the Optical path lenght inside the crystal. (OPD_)
 - The Brewster angle of the material. (brews)
-## Algorithm
-The main focus of the algorithm is to obtain the Mueller matrix, the optical path diference (OPD) and the Brewster angle using como input the <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and the <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> 
+## Machine Learning
+Our goal is to invert the Ray tracing algorithm using as input the Mueller matrix of a material and other parameters obtainable by experimental measurements, and as outputs the parameters of the material, in this case the refractive index (<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{o}" />)
+### Neural Network Arquitecture
