@@ -3,15 +3,19 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 ## Overview
 ### Input
 #### Geometric Parameters
-- angle between the incident ray and the incident plane (indicent angle)
-- normal vector of the incident plane
-- the large of the crystal (Thick)
+- angle between the incident ray and the incident plane, the incident angle (a_i)
+- normal vector of the incident plane (vnorm)
+- the large of the crystal (thick)
 #### Parameters of the Crystal
-- Ordinary Refractive Index
-- Extraordinary Refractive Index
-- Angle of the Optic Axis
-- Ordinary Gyrotropic Index
-- Extraordinary Gyrotropic Index
+- Ordinary Refractive Index (go)
+- Extraordinary Refractive Index (ge)
+- Angle of the Optic Axis (a_c)
+- Ordinary Gyrotropic Index (ge)
+- Extraordinary Gyrotropic Index (go)
 #### External Parameters
-- refractive index of the outside media (air n/_o=n/_e=1)
-- 
+- refractive index of the outside media (for example: air no=ne=1)
+- wavelength of the incident ray (lamda)
+### Output
+- Mueller matrix of the material.
+- the diference of the Optical path lenght inside the crystal.
+- The Brewster angle of the material.
