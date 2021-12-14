@@ -16,6 +16,6 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 - refractive index of the outside media (for example: air no=ne=1)
 - wavelength of the incident ray (lamda)
 ### Output
-- Mueller matrix of the material.
-- the diference of the Optical path lenght inside the crystal.
-- The Brewster angle of the material.
+- Mueller matrix of the material. (M)
+- the diference of the Optical path lenght inside the crystal. (OPD_)
+- The Brewster angle of the material. (brews)
