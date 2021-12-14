@@ -13,5 +13,5 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 - Ordinary Gyrotropic Index
 - Extraordinary Gyrotropic Index
 #### External Parameters
-- refractive index of the outside media (air n_o=n_e=1)
+- refractive index of the outside media (air n/_o=n/_e=1)
 - 
