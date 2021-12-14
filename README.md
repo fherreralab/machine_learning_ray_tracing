@@ -50,4 +50,5 @@ As an example we gonna used the BBO crystal, and the following parameters:
 
 # Reference
 [1] https://keras.io/api/
+
 [2] G. Tamošauskas, G. Beresnevičius, D. Gadonas, A. Dubietis. Transmittance and phase matching of BBO crystal in the 3−5 μm range and its application for the characterization of mid-infrared laser pulses, Opt. Mater. Express 8, 1410-1418 (2018)
