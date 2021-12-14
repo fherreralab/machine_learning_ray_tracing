@@ -21,7 +21,7 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 - Mueller matrix of the material. (M)
 - the diference of the Optical path lenght inside the crystal. (OPD_)
 - The Brewster angle of the material. (brews)
-<br \>
+- <br />
 ## Machine Learning
 Our goal is to invert the Ray tracing algorithm using as input the Mueller matrix of a material and other parameters obtainable by experimental measurements, and as outputs the parameters of the material, in this case the refractive index (<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />), to do so we gonna use Neural Networks.
 ### Neural Network Arquitecture
