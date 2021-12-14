@@ -24,5 +24,6 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 ## Machine Learning
 Our goal is to invert the Ray tracing algorithm using as input the Mueller matrix of a material and other parameters obtainable by experimental measurements, and as outputs the parameters of the material, in this case the refractive index (<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />), to do so we gonna use Neural Networks.
 ### Neural Network Arquitecture
-The arquitecture use for this algorthim is shown in the following figure:
+The arquitecture used for this algorthim is shown in the following figure:
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
+### Data
