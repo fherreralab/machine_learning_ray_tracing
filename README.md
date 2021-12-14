@@ -27,6 +27,8 @@ Our goal is to invert the Ray tracing algorithm using as input the Mueller matri
 We used 0.1 as the learning rate with a decay of 0.01 over 30 epochs and a batch size of 10, **elu** as the activation function, **Adam** as the optimization method and for the loss function we used the **Logcosh** function from *Keras*. 
 
 The Arquitecture used for this algorithm is the following:
+
+
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
 ### Data
 For this problem we used the data from the mcclain ray tracing algorithm, that was mention previously.
