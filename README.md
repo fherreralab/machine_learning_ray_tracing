@@ -24,7 +24,8 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 ## Machine Learning
 Our goal is to invert the Ray tracing algorithm using as input the Mueller matrix of a material and other parameters obtainable by experimental measurements, and as outputs the parameters of the material, in this case the refractive index (<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />), to do so we gonna use **Feed-Forward Neural Networks**.
 ### Neural Network Arquitecture and Training
-We used 0.1 as the learning rate with a decay of 0.01 over 30 epochs and a batch size of 10, **elu** as the activation function, **Adam** as the optimization method and for the loss function we used the **Logcosh** function from *Keras*. The Arquitecture used for this algorithm is the following:
+We used 0.1 as the learning rate with a decay of 0.01 over 30 epochs and a batch size of 10, **elu** as the activation function, **Adam** as the optimization method and for the loss function we used the **Logcosh** function from *Keras*. 
+The Arquitecture used for this algorithm is the following:
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
 ### Data
 For this problem we used the data from the mcclain ray tracing algorithm, that was mention previously.
@@ -34,8 +35,8 @@ As an example we gonna used the BBO crystal, and the following parameters:
 - ni=1
 - a_c=29.2
 - a_i=0
-- no=1.6589<img src="https://latex.codecogs.com/svg.image?^{1}" title="^{1}" />
-- ne = 1.5446<img src="https://latex.codecogs.com/svg.image?^{1}" title="^{1}" />
+- no=1.6589 (<img src="https://latex.codecogs.com/svg.image?^{1}" title="^{1}" />)
+- ne = 1.5446 (<img src="https://latex.codecogs.com/svg.image?^{1}" title="^{1}" />)
 - go=ge=0
 - thick= 3E-3
 - lamda= 853*10**-9
