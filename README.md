@@ -10,7 +10,7 @@ A general problem in the experimental Polarimetry is to obtain via this experime
 This repository contains codes that computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (McClain ray tracing).
 
 
-### Input
+### Inputs
 
 
 #### Geometric Parameters
