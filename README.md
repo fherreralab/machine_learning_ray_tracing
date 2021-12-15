@@ -16,28 +16,28 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 #### Geometric Parameters
 
 
-- angle between the incident ray and the incident plane, the incident angle (a_i)
-- normal vector of the incident plane (vnorm)
-- the large of the crystal (thick)
+- angle between the incident ray and the incident plane, the incident angle (a_i).
+- normal vector of the incident plane (vnorm).
+- the large of the crystal (thick).
 
 
 #### Parameters of the Crystal
-- Ordinary Refractive Index (no)
-- Extraordinary Refractive Index (ne)
-- Angle of the Optic Axis (a_c)
-- Ordinary Gyrotropic Index (ge)
-- Extraordinary Gyrotropic Index (go)
+- Ordinary Refractive Index (no).
+- Extraordinary Refractive Index (ne).
+- Angle of the Optic Axis (a_c).
+- Ordinary Gyrotropic Index (ge).
+- Extraordinary Gyrotropic Index (go).
 
 
 #### External Parameters
-- refractive index of the outside media (for example: air no=ne=1)
-- wavelength of the incident ray (lamda)
+- refractive index of the outside media (for example: air no=ne=1).
+- wavelength of the incident ray (lamda).
 
 
 ### Output
-- Mueller matrix of the material. (M)
-- the diference of the Optical path lenght inside the crystal. (OPD)
-- The Brewster angle of the material. (brews)
+- Mueller matrix of the material (M).
+- the diference of the Optical path lenght inside the crystal or Optical Path Difference (OPD).
+- The Brewster angle of the material (brews).
 
 
 ## Machine Learning
@@ -55,7 +55,7 @@ The Arquitecture used for this algorithm is the following:
 
 ### Data
 For this problem we used the data from the McClain ray tracing algorithm, that was mention previously.
-As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameteres that are used as input of the ray tracing algorithm. This leads to a input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD or the Brewster angle.
+As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameteres that are used as input of the ray tracing algorithm. This leads to a input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD (This data has been adjusted by a parameter of <img src="https://latex.codecogs.com/svg.image?10^{6}" title="10^{6}" /> in the code) or the Brewster angle.
 
 
 ## Example
@@ -81,7 +81,7 @@ If the Brewster angle is required use the following line of command:
 
 For this function to work is needed an input polarization, in this case we use the **s** polarization as an input but the algorithm transform this polarization in **p** as the real polarization used in the algorithm.
 
-This Algorithm is in the repository by the name of **ray_tracing_algorithm.py**
+This Algorithm is in the repository by the name of **ray_tracing_algorithm.py**.
 
 
 In the repository there is a folder that contain the data used to train the NN using 10.000 data as training data and 3.000 data for validation, there is a folder for tha Brewster angle option and the OPD option, both contain random data for <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> from 1.4 to 1.7, using the **random.uniform** function, this . This folders are *Training data Brewster* and *Training data OPD*.
