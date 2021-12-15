@@ -16,9 +16,9 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 #### Geometric Parameters
 
 
-- angle between the incident ray and the incident plane, the incident angle (a_i).
-- normal vector of the incident plane (vnorm).
-- the large of the crystal (thick).
+- Angle between the incident ray and the incident plane, the incident angle (a_i).
+- Normal vector of the incident plane (vnorm).
+- The large of the crystal (thick).
 
 
 #### Parameters of the Crystal
