@@ -1,7 +1,7 @@
 # Machine Learning Polarimetry
 
 ## Overview
-A general problem in the experimental Polarimetry is to obtain via this experimental data the properties of the material, this problem is tipycally approached by using Mueller matrix descomposition, but this method is convoluted since it depends of all the basics types of Mueller matrix that are known. So another approached to this problem is to have an algorithm thats go from the material properties to the polarimetry and then invert this problem using any tool that can typically invert physics problem, in this case we used Machine learning more specifically Neural Networks (NN). To do so we used the McClain algorithm[<img src="https://latex.codecogs.com/svg.image?^{1-2}" title="^{1-2}" />]
+A general problem in the experimental Polarimetry is to obtain via this experimental data the properties of the material, this problem is tipycally approached by using Mueller matrix descomposition, but this method is convoluted since it depends of all the basics types of Mueller matrix that are known. So another approached to this problem is to have an algorithm thats go from the material properties to the polarimetry and then invert this problem using any tool that can typically invert physics problem, in this case we used Machine learning more specifically Neural Networks (NN). To do so we used the **McClain algorithm**[<img src="https://latex.codecogs.com/svg.image?^{1-2}" title="^{1-2}" />] and Feed-Forward Neural Networks.
 
 
 ## Polarimetry
