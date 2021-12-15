@@ -419,7 +419,8 @@ def ray_tra(no,ne,thick,go,ge,a_c,a_i,ni,lamda,Ei):
 
 """ general algorithm for the polarizations, in this case we used the V (vectical)
     and H (horizontal) base to obtained the Jones matrix"""
-def al_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda):
+
+def all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda):
     Es=np.zeros((3,1))
     Es[0]=1
     
@@ -511,7 +512,7 @@ def al_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda):
 
 
 """general algorithm for only the first interface (Nonbirefringent-to-Birefringent)"""
-def primera_capa(a_i,no,ne,a_c,go,ge,vnorm,ni,Ei):
+def first_interface(a_i,no,ne,a_c,go,ge,vnorm,ni,Ei):
 
     e,g,eje,ki=tensor(no,ne,go,ge,vnorm,a_c,a_i)
 
@@ -551,7 +552,7 @@ def Brewster(no,ne,a_c,go,ge,vnorm,ni,Ei):
     Re=[]
 
     for a in range(len(a_i)):
-        R=primera_capa(a_i[a],no,ne,a_c,go,ge,vnorm,ni,Ei)
+        R=first_interface(a_i[a],no,ne,a_c,go,ge,vnorm,ni,Ei)
         Re.append(R.real)
     Re_=np.array(Re)
     for a in range(len(a_i)):
