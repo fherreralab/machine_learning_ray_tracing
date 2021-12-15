@@ -75,10 +75,12 @@ As an example we gonna used the BBO crystal, and the following parameters:
 Then use the algorithm as:
 
 - M,OPD = all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda)
+
 Where M is the Mueller matrix of the material for that especific set of inputs and OPD is the Optical path difference between the ordinary and the extraordinary ray incide the crystal.
 
 If the Brewster angle is required use the following line of command:
 - brews = Brewster(no,ne,a_c,go,ge,vnorm,ni,Ei)
+
 Where brews is the Brewster angle calculated in this case for this setup between 50 and 90 from the reflection index, this can be changed in the line 529 in the code.
 
 
@@ -89,8 +91,21 @@ This Algorithm is in the repository by the name of **ray_tracing_algorithm.py**.
 
 In the repository there is a folder that contain the data used to train the NN using 10.000 data as training data and 3.000 data for validation, there is a folder for tha Brewster angle option and the OPD option, both contain random data for <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> from 1.4 to 1.7, using the **random.uniform** function, this . This folders are *Training data Brewster* and *Training data OPD*.
 
-Also in the repository there is a folder that contain the weight used for this problem, from 10.000 to 100 data for the option of Brewster angle and for OPD from 1.000.000 to 100 data. this due to the OPD data is more easy to obtain that the Brewster angle data.
+Also in the repository there is a folder that contain the weight used for this problem, from 10.000 to 100 data for the option of Brewster angle and for OPD from 1.000.000 to 100 data. this due to the OPD data is more easy to obtain than the Brewster angle data.
 
+### Results
+Using the weight of the 10.000 data for OPD and Brewster angle we have the following NN predictions :
+
+For OPD:
+- no=1,6153855
+- ne=1,48315930
+
+Giving us an percentage relative error of 2,62% for the <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and a 3,98% for the <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />. For Brewster we have:
+
+- no=1,65347790
+- ne= 1,53919400
+
+Giving us an percentage relative error of 0,33% for the <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and a 0,35% for the <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />.
 
 # Requeriments
 - [Numpy](https://numpy.org/) 
