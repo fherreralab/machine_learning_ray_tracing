@@ -56,6 +56,9 @@ If the Brewster angle is required use the following line of command:
 
 For this function to work is needed an input polarization, in this case we use the **s** polarization as an input but the algorithm transform this polarization in **p** as the real polarization used in the algorithm.
 
+This Algorithm is in the repository by the name of **ray_tracing_algorithm.py**
+
+
 In the repository there is a folder that contain the data used to train the NN using 10.000 data as training data and 3.000 data for validation, there is a folder for tha Brewster angle option and the OPD option, both contain random data for <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> from 1.4 to 1.7, using the **random.uniform** function, this . This folders are *Training data Brewster* and *Training data OPD*.
 
 Also in the repository there is a folder that contain the weight used for this problem, from 10.000 to 100 data for the option of Brewster angle and for OPD from 1.000.000 to 100 data. this due to the OPD data is more easy to obtain that the Brewster angle data.
