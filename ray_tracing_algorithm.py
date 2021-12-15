@@ -103,7 +103,7 @@ def k_t1(no,ne,go,ge,eje,ki,ni,vnorm,prop):
 
         elif prop==1:
             no_n=cmt.sqrt((n1+n2)/(2*(e+w)))
-#            print(k)
+
         n=no_n.real
         k=k+1
 
@@ -153,10 +153,6 @@ def pol(kt,ed,gd,n):
             Et_=v[:,a]
     
 
-    # u, s, vh = np.linalg.svd(M, full_matrices=True)
-    # v=vh.transpose()
-    # Et=v[:,2]
-    # Et_=v[:,1]
     Et=Et/np.linalg.norm(Et)
     Et_=Et_/np.linalg.norm(Et_)
     Ht=np.dot((n*KT+1j*gd),Et)
@@ -176,6 +172,7 @@ def frho(E,H):
 
 """ Fresnel equations for transmition and reflection of an isotropyc-unixial
     interface"""
+
 def Fresnel1(ki,vnorm,Eto,Ete,Hto,Hte,Ers,Erp,Hrs,Hrp,Ei):
     q=ki
     Hi=np.cross(ni*ki.transpose()[0],Ei.transpose()[0])
@@ -249,8 +246,9 @@ def OPL(rho_o,rho_e,thick,kto,kte,ang_i,lamda,no,ne):
     
     return desfase,abs(yto-yte)
 
-"""layer birrefringente-isotropyc"""
+"""Second Interface birrefringente-isotropyc"""
 """standard form of the law of refraction used for isotropyc material"""
+
 def kt_bir_nbir(vnorm,ki,ni,n):
     gamma_t=-np.vdot(ni*ki,vnorm)+mt.sqrt((ni*ni*np.vdot(ki,vnorm)**2)+(n*n-ni*ni))
     
@@ -458,10 +456,8 @@ def all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda):
 
         Eout_s.append(A)
         Eout_p.append(B)
-    #     OPd.append(C)
     
-    # OPd_=np.linalg.norm(OPd)
-    OPd_=C
+    OPD=C
     J_out=np.zeros((2,2),dtype=complex)
     J_out[0,0]=Eout_s[0]
     J_out[1,0]=Eout_p[0]
@@ -472,14 +468,7 @@ def all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda):
 
 
     Jon=np.array([[J_out[0,0],J_out[0,1]],[J_out[1,0],J_out[1,1]]])
-    # print(Ep)
-    # print("")
-    # print("polarizaciones")
-    # print(Ei[0])
-    # print(ray_tra(no,ne,thick,go,ge,a_c,a_i,ni,lamda,EH))
-    # # print("")
-    # print(np.dot(Jon,JH))
-    
+
     U=np.zeros((4,4),dtype=complex)
     U[0][0]=1
     U[0][3]=1
@@ -492,23 +481,12 @@ def all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda):
 
     
     
-    # S=np.zeros((4,4),dtype=complex)
-    # S[0,0]=1
-    # S[3,0]=1
-    # S[0,1]=1
-    # S[3,1]=-1
-    # S[1,2]=1
-    # S[2,2]=1
-    # S[1,3]=-1j
-    # S[2,3]=1j
-    # U=S.conjugate().transpose()
-    
     U=U/mt.sqrt(2)
     Tens_i=np.kron(Jon,np.conjugate(Jon))
     M=np.matmul(np.matmul(U,Tens_i),np.linalg.inv(U))
     M=M.real/np.max(M.real)
 
-    return M,OPd_*1E6
+    return M,OPD*1E6
 
 
 """general algorithm for only the first interface (Nonbirefringent-to-Birefringent)"""
@@ -518,7 +496,7 @@ def first_interface(a_i,no,ne,a_c,go,ge,vnorm,ni,Ei):
 
     Ep=np.cross(Ei.transpose(),ki.transpose())[0]
     Ep=Ep/np.linalg.norm(Ep)
-#    print(Ep)
+
     Ei=np.zeros((3,1),dtype=complex)
     Ei[0]=Ep[0]
     Ei[1]=Ep[1]
