@@ -61,16 +61,15 @@ As input we used the ouputs of the ray tracing algorithm and as outputs the refr
 ## Example
 
 As an example we gonna used the BBO crystal, and the following parameters:
-- ni=1
-- a_c=29.2
-- a_i=0
-- no=1.6589 [<img src="https://latex.codecogs.com/svg.image?^{4}" title="^{4}" />]
+- ni = 1
+- a_c = 29.2
+- a_i = 0
+- no = 1.6589 [<img src="https://latex.codecogs.com/svg.image?^{4}" title="^{4}" />]
 - ne = 1.5446 [<img src="https://latex.codecogs.com/svg.image?^{4}" title="^{4}" />]
-- go=ge=0
-- thick= 3E-3
-- lamda= 853*10**-9
-- vnorm=np.zeros((3,1))
-- vnorm[2]=1 
+- go = ge =0
+- thick = 3E-3
+- lamda = 853*10**-9
+- vnorm = np.zeros((3,1)) and vnorm[2] = 1
 
 Then use the algorithm as:
 
@@ -97,13 +96,13 @@ Also in the repository there is a folder that contain the weight used for this p
 Using the weight of the 10.000 data for OPD and Brewster angle we have the following NN predictions :
 
 For OPD:
-- no=1,6153855
-- ne=1,48315930
+- no = 1,6153855
+- ne = 1,48315930
 
 Giving us an percentage relative error of 2,62% for the <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and a 3,98% for the <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />. For Brewster we have:
 
-- no=1,65347790
-- ne= 1,53919400
+- no = 1,65347790
+- ne = 1,53919400
 
 Giving us an percentage relative error of 0,33% for the <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and a 0,35% for the <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />.
 
