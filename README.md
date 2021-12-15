@@ -7,7 +7,7 @@ A general problem in the experimental Polarimetry is to obtain via this experime
 ## Polarimetry
 
 
-This repository contains codes that computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (mcclain ray tracing).
+This repository contains codes that computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (McClain ray tracing).
 
 
 ### Input
@@ -36,7 +36,7 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 
 ### Output
 - Mueller matrix of the material. (M)
-- the diference of the Optical path lenght inside the crystal. (OPD_)
+- the diference of the Optical path lenght inside the crystal. (OPD)
 - The Brewster angle of the material. (brews)
 
 
@@ -54,8 +54,8 @@ The Arquitecture used for this algorithm is the following:
 
 
 ### Data
-For this problem we used the data from the mcclain ray tracing algorithm, that was mention previously.
-As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />), fixing the other parameteres.
+For this problem we used the data from the McClain ray tracing algorithm, that was mention previously.
+As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameteres that are used as input of the ray tracing algorithm. This leads to a input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD or the Brewster angle.
 
 
 ## Example
