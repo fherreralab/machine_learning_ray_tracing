@@ -34,6 +34,7 @@ The Arquitecture used for this algorithm is the following:
 For this problem we used the data from the mcclain ray tracing algorithm, that was mention previously.
 As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />), fixing the other parameteres.
 ## Example
+
 As an example we gonna used the BBO crystal, and the following parameters:
 - ni=1
 - a_c=29.2
@@ -45,6 +46,15 @@ As an example we gonna used the BBO crystal, and the following parameters:
 - lamda= 853*10**-9
 - vnorm=np.zeros((3,1))
 - vnorm[2]=1 
+
+Then use the algorithm as:
+
+- all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda)
+
+If the Brewster angle is required use the following line of command:
+- Brewster(no,ne,a_c,go,ge,vnorm,ni,Ei)
+
+For this function to work is needed an input polarization, in this case we use the **s** polarization as an input but the algorithm transform this polarization in **p** as the real polarization used in the algorithm.
 
 In the repository there is a folder that contain the data used to train the NN using 10.000 data as training data and 3.000 data for validation, there is a folder for tha Brewster angle option and the OPD option, both contain random data for <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> from 1.4 to 1.7, using the **random.uniform** function, this . This folders are *Training data Brewster* and *Training data OPD*.
 
