@@ -74,10 +74,13 @@ As an example we gonna used the BBO crystal, and the following parameters:
 
 Then use the algorithm as:
 
-- all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda)
+- M,OPD = all_polarization(no,ne,go,ge,thick,a_c,a_i,ni,lamda)
+Where M is the Mueller matrix of the material for that especific set of inputs and OPD is the Optical path difference between the ordinary and the extraordinary ray incide the crystal.
 
 If the Brewster angle is required use the following line of command:
-- Brewster(no,ne,a_c,go,ge,vnorm,ni,Ei)
+- brews = Brewster(no,ne,a_c,go,ge,vnorm,ni,Ei)
+Where brews is the Brewster angle calculated in this case for this setup between 50 and 90 from the reflection index, this can be changed in the line 529 in the code.
+
 
 For this function to work is needed an input polarization, in this case we use the **s** polarization as an input but the algorithm transform this polarization in **p** as the real polarization used in the algorithm.
 
