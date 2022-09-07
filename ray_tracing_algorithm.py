@@ -175,6 +175,7 @@ def frho(E,H):
 
 def Fresnel1(ki,vnorm,Eto,Ete,Hto,Hte,Ers,Erp,Hrs,Hrp,Ei):
     q=ki
+    ni=1
     Hi=np.cross(ni*ki.transpose()[0],Ei.transpose()[0])
     if np.linalg.norm(np.cross(np.transpose(q),np.transpose(vnorm))[0])==0:
         q=np.zeros((3,1),dtype=complex)
@@ -520,8 +521,6 @@ def first_interface(a_i,no,ne,a_c,go,ge,vnorm,ni,Ei):
     
     Er=arp*Erp+Ers*ars
     R=np.dot(Er,Er.conjugate(Er))
-
-
     return R
 
 """ Brewster angle function"""
@@ -537,3 +536,6 @@ def Brewster(no,ne,a_c,go,ge,vnorm,ni,Ei):
         if Re_.min()==Re[a]:
             brews=a_i[a]
     return brews
+
+# in: brewster angle (BBO), start n1 air
+# out: no, ne
