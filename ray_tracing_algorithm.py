@@ -127,7 +127,7 @@ def k_r1(ni,ki,vnorm,a_i):
 
 
 
-"""function used to get the Electric field and the Magnetic field using the 
+"""function used for the Electric field and the Magnetic field using the 
     eigenvectors of the matrix M"""
 def pol(kt,ed,gd,n):
     
