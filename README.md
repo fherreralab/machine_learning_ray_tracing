@@ -4,10 +4,10 @@
 A general problem in the experimental Polarimetry is to obtain via this experimental data the properties of the material, this problem is tipycally approached by using Mueller matrix descomposition, but this method is convoluted since it depends of all the basics types of Mueller matrix that are known. So another approached to this problem is to have an algorithm thats go from the material properties to the polarimetry and then invert this problem using any tool that can typically invert physics problem, in this case we used Machine learning more specifically Neural Networks (NN). To do so we used the **McClain algorithm**[<img src="https://latex.codecogs.com/svg.image?^{1-2}" title="^{1-2}" />] and **Feed-Forward Neural Networks**.
 
 
-## Polarimetry
+## Polarimetry: ray_tracing_algorithm.py
 
 
-This repository contains codes that computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (McClain ray tracing).
+This python file computes the Mueller matrix of an birrefrigent material using as inputs the geometrics parameters of the problem and the Parameters of the material via an ray tracing code (McClain ray tracing).
 
 
 ### Inputs
@@ -40,11 +40,7 @@ This repository contains codes that computes the Mueller matrix of an birrefrige
 - The Brewster angle of the material (brews).
 
 
-## Machine Learning
-Our goal is to invert the Ray tracing algorithm using as input the Mueller matrix of a material and other parameters obtainable by experimental measurements, and as outputs the parameters of the material, in this case the refractive index (<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />), to do so we gonna use **Feed-Forward Neural Networks**.
-
-
-### Neural Network Arquitecture and Training
+### Neural Network Arquitecture and Training Parameters
 We used 0.1 as the learning rate with a decay of 0.01 over 30 epochs and a batch size of 10, **elu** as the activation function, **Adam** as the optimization method and for the loss function we used the **Logcosh** function from *Keras*[<img src="https://latex.codecogs.com/svg.image?^{3}" title="^{3}" />]. 
 
 The Arquitecture used for this algorithm is the following:
@@ -53,14 +49,16 @@ The Arquitecture used for this algorithm is the following:
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
 
 
-### Data
+### Training Dataset
 For this problem we used the data from the McClain ray tracing algorithm, that was mention previously.
 As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameteres that are used as input of the ray tracing algorithm. This leads to a input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD (This data has been adjusted by a parameter of <img src="https://latex.codecogs.com/svg.image?10^{6}" title="10^{6}" /> in the code) or the Brewster angle.
 
+Folders:
 
-## Example
 
-As an example we gonna used the BBO crystal, and the following parameters:
+## Case Use Example:
+
+As an example we use the BBO crystal, and the following parameters:
 - ni = 1
 - a_c = 29.2
 - a_i = 0
@@ -106,12 +104,12 @@ Giving us an percentage relative error of 2,62% for the <img src="https://latex.
 
 Giving us an percentage relative error of 0,33% for the <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and a 0,35% for the <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />.
 
-# Requeriments
+# Library Requeriments
 - [Numpy](https://numpy.org/) 
 - [Keras](https://keras.io/)
 
 
-# Reference
+# References
 [1]Stephen C. McClain, Lloyd W. Hillman, and Russell A. Chipman, "Polarization ray tracing in anisotropic optically active media. I. Algorithms," J. Opt. Soc. Am. A 10, 2371-2382 (1993)
 
 [2]Stephen C. McClain, Lloyd W. Hillman, and Russell A. Chipman, "Polarization ray tracing in anisotropic optically active media. II. Theory and physics," J. Opt. Soc. Am. A 10, 2383-2393 (1993)
