@@ -10,7 +10,7 @@ import numpy as np
 import jax
 import jax.numpy as jnp
 
-from ray_tracing import al_polarization
+from ray_tracing_JAX import al_polarization
 from utils import get_exp_parameters
 
 def _grid(no_exp,ne_exp,material_):
