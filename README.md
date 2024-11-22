@@ -55,7 +55,7 @@ As input we used the ouputs of the ray tracing algorithm and as outputs the refr
 Folders:
 
 ## Automatic differentiation
-We used a JAX [<img src="https://latex.codecogs.com/svg.image?^{5}" title="^{5}" />] code of the ray tracing algorithm to automatically differentiate it, we use 200 different starting points for each sample, with experimental refractive index values, obtained from refractiveindex.info(https://refractiveindex.info/), with a value added to the refractive index of 0.1 max for each iteration. 
+We used a JAX [<img src="https://latex.codecogs.com/svg.image?^{5}" title="^{5}" />] code of the ray tracing algorithm to automatically differentiate it, we use 200 different starting points for each sample, with experimental refractive index values, obtained from https://refractiveindex.info/, with a value added to the refractive index of 0.1 max for each iteration. 
 
 To use the automatic differencing algorithm just run the file main_JAX.py with the file ray_tracing_JAX.py in the same folder, in the main_JAX.py file you can change the parameters of the ray tracing algorithm and the parameters of the crystals. 
 
