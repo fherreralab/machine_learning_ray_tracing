@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14201547.svg)](https://doi.org/10.5281/zenodo.14201547)
 # Machine Learning Polarimetry
 
 ## Overview
