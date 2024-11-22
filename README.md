@@ -40,7 +40,7 @@ This python file computes the Mueller matrix of an birrefrigent material using a
 - The Brewster angle of the material (brews).
 
 
-### Neural Network Arquitecture and Training Parameters
+## Neural Network Arquitecture and Training Parameters
 We used 0.1 as the learning rate with a decay of 0.01 over 30 epochs and a batch size of 10, **elu** as the activation function, **Adam** as the optimization method and for the loss function we used the **Logcosh** function from *Keras*[<img src="https://latex.codecogs.com/svg.image?^{3}" title="^{3}" />]. 
 
 The Arquitecture used for this algorithm is the following:
@@ -48,9 +48,10 @@ The Arquitecture used for this algorithm is the following:
 
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
 
-
-### Training Dataset
-For this problem we used the data from the McClain ray tracing algorithm, that was mention previously.
+## Automatic differentiation
+We used a JAX
+## Training Dataset
+For this problem we used the data from McClain ray tracing algorithm, that was mention previously.
 As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameteres that are used as input of the ray tracing algorithm. This leads to a input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD (This data has been adjusted by a parameter of <img src="https://latex.codecogs.com/svg.image?10^{6}" title="10^{6}" /> in the code) or the Brewster angle.
 
 Folders:
@@ -107,6 +108,8 @@ Giving us an percentage relative error of 0,33% for the <img src="https://latex.
 # Library Requeriments
 - [Numpy](https://numpy.org/) 
 - [Keras](https://keras.io/)
+- [JAX] (https://jax.readthedocs.io/en/latest/)
+- [JAXopt] (https://github.com/google/jaxopt)
 
 
 # References
@@ -117,3 +120,7 @@ Giving us an percentage relative error of 0,33% for the <img src="https://latex.
 [3] https://keras.io/api/
 
 [4] G. Tamošauskas, G. Beresnevičius, D. Gadonas, A. Dubietis. Transmittance and phase matching of BBO crystal in the 3−5 μm range and its application for the characterization of mid-infrared laser pulses, Opt. Mater. Express 8, 1410-1418 (2018)
+
+[5] https://jax.readthedocs.io/en/latest/user_guides.html
+
+[6] https://jaxopt.github.io/stable/
