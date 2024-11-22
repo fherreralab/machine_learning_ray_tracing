@@ -1,7 +1,7 @@
 # Machine Learning Polarimetry
 
 ## Overview
-A general problem in the experimental Polarimetry is to obtain via this experimental data the properties of the material, this problem is tipycally approached by using Mueller matrix descomposition, but this method is convoluted since it depends of all the basics types of Mueller matrix that are known. So another approached to this problem is to have an algorithm thats go from the material properties to the polarimetry and then invert this problem using any tool that can typically invert physics problem, in this case we used Machine learning more specifically Neural Networks (NN). To do so we used the **McClain algorithm**[<img src="https://latex.codecogs.com/svg.image?^{1-2}" title="^{1-2}" />] and **Feed-Forward Neural Networks**.
+A general problem in experimental Polarimetry is to obtain via this experimental data the properties of the material, this problem is typically approached by using Mueller matrix decomposition, but this method is convoluted since it depends on all the basic types of Mueller matrix that are known. So another approach to this problem is to have an algorithm that goes from the material properties to the polarimetry and then invert this problem using any tool that can typically invert physics problems, in this case, we used Machine learning more specifically Neural Networks (NN). To do so we used the **McClain algorithm**[<img src="https://latex.codecogs.com/svg.image?^{1-2}" title="^{1-2}" />] and **Feed-Forward Neural Networks**.
 
 
 ## Polarimetry: ray_tracing_algorithm.py
@@ -49,7 +49,7 @@ The Arquitecture used for this algorithm is the following:
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
 
 ### Training Dataset
-For this problem we used the data from McClain ray tracing algorithm, that was mention previously.
+For this problem, we used the data from McClain ray tracing algorithm, which was mentioned previously.
 As input, we used the outputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameters that are used as input of the ray tracing algorithm. This leads to an input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD (This data has been adjusted by a parameter of <img src="https://latex.codecogs.com/svg.image?10^{6}" title="10^{6}" /> in the code) or the Brewster angle.
 
 #### Folders:
@@ -95,9 +95,9 @@ For this function to work is needed an input polarization, in this case we use t
 This Algorithm is in the repository by the name of **ray_tracing_algorithm.py**.
 
 
-In the repository there is a folder that contain the data used to train the NN using 10.000 data as training data and 3.000 data for validation, there is a folder for tha Brewster angle option and the OPD option, both contain random data for <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> from 1.4 to 1.7, using the **random.uniform** function, this . This folders are *Training data Brewster* and *Training data OPD*.
+IIn the repository there is a folder that contains the data used to train the NN using 10.000 data as training data and 3.000 data for validation, there is a folder for the Brewster angle option and the OPD option, both contain random data for <img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" /> and <img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" /> from 1.4 to 1.7, using the **random.uniform** function. These folders are *Training data MM_Brewster* and *Training data MM_OPD*.
 
-Also in the repository there is a folder that contain the weight used for this problem, from 10.000 to 100 data for the option of Brewster angle and for OPD from 1.000.000 to 100 data. this due to the OPD data is more easy to obtain than the Brewster angle data.
+Also, in the repository, there is a folder that contains the weight used for this problem: from 10.000 to 100 data for the option of Brewster angle and for OPD from 1.000.000 to 100 data. This is because the OPD data is more easy to obtain than the Brewster angle data.
 
 ### Results
 Using the weight of the 10.000 data for OPD and Brewster angle we have the following NN predictions :
