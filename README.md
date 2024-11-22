@@ -48,13 +48,16 @@ The Arquitecture used for this algorithm is the following:
 
 ![Arquitecture](https://github.com/fherreralab/machine_learning_ray_tracing/blob/main/NN_Architecture.PNG)
 
-## Automatic differentiation
-We used a JAX
-## Training Dataset
+### Training Dataset
 For this problem we used the data from McClain ray tracing algorithm, that was mention previously.
 As input we used the ouputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameteres that are used as input of the ray tracing algorithm. This leads to a input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD (This data has been adjusted by a parameter of <img src="https://latex.codecogs.com/svg.image?10^{6}" title="10^{6}" /> in the code) or the Brewster angle.
 
 Folders:
+
+## Automatic differentiation
+We used a JAX [<img src="https://latex.codecogs.com/svg.image?^{5}" title="^{5}" />] code of the ray tracing algorithm to automatically differentiate it, we use 200 different starting points for each sample, with experimental refractive index values, obtained from refractiveindex.info[https://refractiveindex.info/], with a value added to the refractive index of 0.1 max for each iteration. 
+
+To use the automatic differencing algorithm just run the file main_JAX.py with the file ray_tracing_JAX.py in the same folder, in the main_JAX.py file you can change the parameters of the ray tracing algorithm and the parameters of the crystals. 
 
 
 ## Case Use Example:
@@ -109,7 +112,6 @@ Giving us an percentage relative error of 0,33% for the <img src="https://latex.
 - [Numpy](https://numpy.org/) 
 - [Keras](https://keras.io/)
 - [JAX] (https://jax.readthedocs.io/en/latest/)
-- [JAXopt] (https://github.com/google/jaxopt)
 
 
 # References
@@ -123,4 +125,4 @@ Giving us an percentage relative error of 0,33% for the <img src="https://latex.
 
 [5] https://jax.readthedocs.io/en/latest/user_guides.html
 
-[6] https://jaxopt.github.io/stable/
+
