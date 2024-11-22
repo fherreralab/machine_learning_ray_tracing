@@ -52,7 +52,7 @@ The Arquitecture used for this algorithm is the following:
 For this problem we used the data from McClain ray tracing algorithm, that was mention previously.
 As input, we used the outputs of the ray tracing algorithm and as outputs the refractive index of the material(<img src="https://latex.codecogs.com/svg.image?n_{e}" title="n_{e}" />,<img src="https://latex.codecogs.com/svg.image?n_{o}" title="n_{o}" />)and fixing the other parameters that are used as input of the ray tracing algorithm. This leads to an input of 17 as the shape, 16 for the Mueller matrix (4x4 matrix) and 1 from the OPD (This data has been adjusted by a parameter of <img src="https://latex.codecogs.com/svg.image?10^{6}" title="10^{6}" /> in the code) or the Brewster angle.
 
-Folders:
+#### Folders:
 Training data MM_Brewster contains the training data for the Mueller matrix plus Brewster angle data, where input_Brewster.npy corresponds to the input data on which the neural network was trained, output_Brewster.npy the output data on which it was trained, input_val_Brewster.npy the input data on which it was validated, and output_val_Brewster.npy the output data on which it was validated. 
 
 Training data MM_OPD, similar to the brewster angle case, contains the training data for the Mueller matrix plus OPD, where input_OPD.npy corresponds to the input data on which the neural network was trained, output_OPD.npy the output data on which it was trained, input_val_OPD.npy the input data on which it was validated, and output_val_OPD.npy the output data on which it was validated. 
